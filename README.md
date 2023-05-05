@@ -3,11 +3,9 @@
 
 # CMake C++ Project Template
 
+## hnwustl/cmake-builder
+
 ### Division with a remainder library
-
-Thank you for your interest in this project!
-
-Are you just starting with `CMake` or C++?
 
 Do you need some easy-to-use starting point, but one that has the basic moving parts you are likely going to need on any medium sized project?
 
@@ -70,7 +68,7 @@ Now we can build this project, and below we show three separate ways to do so.
 ```
 
 
-#### Running the tests
+#### Running the Google tests
 
 ```bash
 ❯ bin/divider_tests
@@ -122,20 +120,6 @@ Division : 112443477 / 12309324 = 9
 Remainder: 112443477 % 12309324 = 1659561
 ```
 
-### Building in CLion
-
-> **NOTE**: Since JetBrains software [does not officially support git submodules](https://youtrack.jetbrains.com/issue/IDEA-64024), you must run `git submodule init && git submodule update` before starting CLion on a freshly checked-out repo.
-
-> **NOTE**: We recommend that you copy file `.idea/workspace.xml.example` into `.idea/workspace.xml` **before starting CLion**. It will provide a good starting point for your project's workspace.
-
-Assuming you've done the above two steps, you can start CLion, and open the project's top level folder. CLion should automatically detect the top level `CMakeLists.txt` file and provide you with the full set of build targets.
-
-Select menu option **Build   ➜ Build Project**, and then **Build ➜ Install**.
-
-![CLION](doc/cmake-clion.png)
-
-The above screenshot is an example of CLion with this project open.
-
 ### Using it as a C++ Library
 
 We build a static library that, given a simple fraction will return the integer result of the division, and the remainder.
@@ -169,18 +153,13 @@ Tests:
 
 #### Contributing
 
-**Pull Requests are WELCOME!** Please submit any fixes or improvements, and I promise to review it as soon as I can at the project URL:
-
  * [Project Github Home](https://github.com/kigster/cmake-project-template)
- * [Submit Issues](https://github.com/kigster/cmake-project-template/issues)
- * [Pull Requests](https://github.com/kigster/cmake-project-template/pulls)
 
 ### License
 
 &copy; 2017-2019 Konstantin Gredeskoul.
 
 Open sourced under MIT license, the terms of which can be read here — [MIT License](http://opensource.org/licenses/MIT).
-
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkigster%2Fcmake-project-template.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkigster%2Fcmake-project-template?ref=badge_large)
 
