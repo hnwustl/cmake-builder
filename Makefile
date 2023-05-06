@@ -1,26 +1,24 @@
 ###
-# $Id: Makefile,v 1.14 2001/08/28 19:22:42 cs342 Exp $
+# 5/5/2023
 ###
 
 #		Fill in your name, email address, and the lab number, leaving the quotes
-LAST_NAME	= "YOUR LAST NAME GOES HERE"
-FIRST_NAME	= "YOUR FIRST NAME GOES HERE"
-EMAIL_ADDRESS	= "YOUR EMAIL ADDRESS GOES HERE"
-LAB_NUMBER	= "THE LAB NUMBER GOES HERE"
+LAST_NAME	= "NORDLUND"
+FIRST_NAME	= "HENRY"
 
 #		The name of the executable file
-EXECUTABLE	= 
+EXECUTABLE	= /home/.../cmake-builder/out/build/x64-Debug/src/UPDATE.exe
 
 #		Source files you want to compile
 #		(NOTE: Don't include header (.h) files, or source (.cc) files
 #		that only contain template class method definitions.)
-CMPL_SRCS	= 
+CMPL_SRCS	= /home/.../cmake-builder/src/main.cpp
 
 #               Source files containing only template class method definitions
 TMPL_SRCS	= 
 
 #               Header files
-HEADER_FILES    = 
+HEADER_FILES    = /home/.../cmake-builder/src/main.h
 
 #               Other files to turn in (i.e., readme, output files, etc)
 OTHER_FILES     = readme
@@ -32,11 +30,6 @@ SPECIAL_FLAGS  = -pedantic
 
 #		C++ compiler
 CXX		= g++
-
-#		Submissions are normally sent to the grader account
-GRADERS		= cse332@cec.wustl.edu
-MAILTO		= $(GRADERS)
-MAILBACK	= $(EMAIL_ADDRESS)
 
 #               All your source files (needed for executable dependency)
 USER_SRCS        = $(CMPL_SRCS) $(TMPL_SRCS) $(HEADER_FILES)
@@ -97,48 +90,6 @@ clean:
 realclean: clean
 	-rm -f $(EXECUTABLE)
 
-toturnin:	clean $(ALL_FILES)
-	zip -r - $(ALL_FILES) Makefile \
-	  | uuencode "homework.zip" > ../toturnin
-
-turnin: toturnin
-	@if [ $(LAST_NAME) = 'YOUR LAST NAME GOES HERE' -o \
-	      $(FIRST_NAME) = 'YOUR FIRST NAME GOES HERE' -o \
-	      $(EMAIL_ADDRESS) = "YOUR EMAIL ADDRESS GOES HERE" -o \
-	      $(LAB_NUMBER) = 'THE LAB NUMBER GOES HERE' ]; \
-          then echo 'ERROR: you must edit your Makefile to set LAST_NAME/FIRST_NAME/EMAIL_ADDRESS/LAB_NUMBER!'; \
-	else \
-	  cat ../toturnin \
-	    | Mail -s "Assignment $(LAB_NUMBER) $(LAST_NAME)_$(FIRST_NAME)" $(MAILTO); \
-	fi
-
-return: toturnin
-	  cat ../toturnin \
-	    | Mail -s "Graded Assignment $(LAB_NUMBER) $(LAST_NAME)_$(FIRST_NAME)" $(MAILBACK);
-
-test_turnin: toturnin
-	@if [ $(LAST_NAME) = 'YOUR LAST NAME GOES HERE' -o \
-	      $(FIRST_NAME) = 'YOUR FIRST NAME GOES HERE' -o \
-	      $(EMAIL_ADDRESS) = "YOUR EMAIL ADDRESS GOES HERE" -o \
-	      $(LAB_NUMBER) = 'THE LAB NUMBER GOES HERE' ]; \
-          then echo 'ERROR: you must edit your Makefile to set LAST_NAME/FIRST_NAME/EMAIL_ADDRESS/LAB_NUMBER!'; \
-	else \
-	  (test -d TEST_TURNIN || mkdir TEST_TURNIN; cd TEST_TURNIN; \
-           uudecode ../../toturnin; unzip homework.zip; /bin/rm homework.zip); \
-	  echo ' '; \
-	  echo 'You just _tested_ turnin, you did _not_ turn anything in!!!!'; \
-	  echo 'Please make sure that the contents of the TEST_TURNIN'; \
-	  echo 'directory are exactly what you want to turn in!'; \
-	  echo 'Then, use "make turnin" to actually turn in your assignment.'; \
-	fi
-
-#		Preview the .h and .c files
-preview:
-	$(ENSCRIPT) -2Gr \
-        -b$(LAST_NAME)", "$(FIRST_NAME)" : $(LOGNAME)@cec.wustl.edu" \
-        -p - $(ALL_FILES) | $(PREVIEWER) -
-
-#		Change the Makefile to reflect the correct dependencies.
 depend:
 	-rm -f ccdep
 	-rm -f eddep
