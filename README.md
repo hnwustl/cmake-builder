@@ -8,8 +8,21 @@ This is a CMake build template designed to help you quickly set up a C++ project
 
 Before using this template, make sure you have the following installed on your system:
 
-- CMake (version 3.20 preferred)
+- CMake (version 3.20 required)
 - C++ compiler (compatible with your operating system)
+
+
+
+## Build CMake 3.20
+get and build CMake
+
+```
+wget https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0.tar.gz
+tar -zvxf cmake-3.20.0.tar.gz
+cd cmake-3.20.0
+./bootstrap
+make -j8
+```
 
 ## Getting Started
 
