@@ -79,7 +79,7 @@ Once the project is built successfully, you can run the executable produced by t
 To run the project, navigate to the build directory and execute the generated executable:
 
 ```
-cd build
+cd build/src
 ./<executable_name>
 ```
 
