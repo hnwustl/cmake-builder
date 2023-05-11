@@ -11,19 +11,6 @@ Before using this template, make sure you have the following installed on your s
 - CMake (version 3.18.4 required)
 - C++ compiler (compatible with your operating system)
 
-
-
-## Build CMake 3.20
-Get and build CMake:
-
-```
-wget https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0.tar.gz
-tar -zvxf cmake-3.20.0.tar.gz
-cd cmake-3.20.0
-./bootstrap
-make -j8
-```
-
 ## Build CMake 3.18.4
 Get and build CMake:
 
