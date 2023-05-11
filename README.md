@@ -14,7 +14,7 @@ Before using this template, make sure you have the following installed on your s
 
 
 ## Build CMake 3.20
-get and build CMake
+Get and build CMake:
 
 ```
 wget https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0.tar.gz
@@ -22,6 +22,13 @@ tar -zvxf cmake-3.20.0.tar.gz
 cd cmake-3.20.0
 ./bootstrap
 make -j8
+```
+
+Or use the shell script:
+
+```
+chmod +x build_cmake.sh
+./build_cmake.sh
 ```
 
 ## Getting Started
